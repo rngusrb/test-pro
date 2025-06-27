@@ -1,0 +1,100 @@
+server:
+  port: 8088
+
+---
+
+spring:
+  profiles: default
+  cloud:
+    gateway:
+#<<< API Gateway / Routes
+      routes:
+        - id: 작가 관리
+          uri: http://localhost:8082
+          predicates:
+            - Path=/authors/**, /authorBookLists/**
+        - id: ai service
+          uri: http://localhost:8083
+          predicates:
+            - Path=/publishings/**, 
+        - id: 포인트 관리
+          uri: http://localhost:8084
+          predicates:
+            - Path=/points/**, /userSubscribedBookLists/**
+        - id: 구독자관리
+          uri: http://localhost:8085
+          predicates:
+            - Path=/users/**, /userWishlists/**, /userReviews/**
+        - id: 서재플랫폼
+          uri: http://localhost:8086
+          predicates:
+            - Path=/플랫폼관리/**, /authorPublishBooklists/**, /userSubscribedBookLists/**
+        - id: 집필관리
+          uri: http://localhost:8087
+          predicates:
+            - Path=/원고/**, /manuscriptLists/**
+        - id: frontend
+          uri: http://localhost:8080
+          predicates:
+            - Path=/**
+#>>> API Gateway / Routes
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+
+---
+
+spring:
+  profiles: docker
+  cloud:
+    gateway:
+      routes:
+        - id: 작가 관리
+          uri: http://작가관리:8080
+          predicates:
+            - Path=/authors/**, 
+        - id: ai service
+          uri: http://aiService:8080
+          predicates:
+            - Path=/publishings/**, 
+        - id: 포인트 관리
+          uri: http://포인트관리:8080
+          predicates:
+            - Path=/points/**, 
+        - id: 구독자관리
+          uri: http://구독자관리:8080
+          predicates:
+            - Path=/users/**, 
+        - id: 서재플랫폼
+          uri: http://서재플랫폼:8080
+          predicates:
+            - Path=/플랫폼관리/**, 
+        - id: 집필관리
+          uri: http://집필관리:8080
+          predicates:
+            - Path=/원고/**, 
+        - id: frontend
+          uri: http://frontend:8080
+          predicates:
+            - Path=/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+server:
+  port: 8080
