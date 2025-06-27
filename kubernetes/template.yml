@@ -3,22 +3,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 작가 관리
+  name: authordm
   labels:
-    app: 작가 관리
+    app: authordm
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: 작가 관리
+      app: authordm
   template:
     metadata:
       labels:
-        app: 작가 관리
+        app: authordm
     spec:
       containers:
-        - name: 작가 관리
-          image: username/작가 관리:latest
+        - name: authordm
+          image: username/authordm:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -43,22 +43,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ai service
+  name: aiservice
   labels:
-    app: ai service
+    app: aiservice
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ai service
+      app: aiservice
   template:
     metadata:
       labels:
-        app: ai service
+        app: aiservice
     spec:
       containers:
-        - name: ai service
-          image: username/ai service:latest
+        - name: aiservice
+          image: username/aiservice:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -83,22 +83,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 포인트 관리
+  name: pointdm
   labels:
-    app: 포인트 관리
+    app: pointdm
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: 포인트 관리
+      app: pointdm
   template:
     metadata:
       labels:
-        app: 포인트 관리
+        app: pointdm
     spec:
       containers:
-        - name: 포인트 관리
-          image: username/포인트 관리:latest
+        - name: pointdm
+          image: username/pointdm:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -123,22 +123,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 구독자관리
+  name: userdm
   labels:
-    app: 구독자관리
+    app: userdm
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: 구독자관리
+      app: userdm
   template:
     metadata:
       labels:
-        app: 구독자관리
+        app: userdm
     spec:
       containers:
-        - name: 구독자관리
-          image: username/구독자관리:latest
+        - name: userdm
+          image: username/userdm:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -163,22 +163,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 서재플랫폼
+  name: admindm
   labels:
-    app: 서재플랫폼
+    app: admindm
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: 서재플랫폼
+      app: admindm
   template:
     metadata:
       labels:
-        app: 서재플랫폼
+        app: admindm
     spec:
       containers:
-        - name: 서재플랫폼
-          image: username/서재플랫폼:latest
+        - name: admindm
+          image: username/admindm:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -203,22 +203,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 집필관리
+  name: authordm
   labels:
-    app: 집필관리
+    app: authordm
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: 집필관리
+      app: authordm
   template:
     metadata:
       labels:
-        app: 집필관리
+        app: authordm
     spec:
       containers:
-        - name: 집필관리
-          image: username/집필관리:latest
+        - name: authordm
+          image: username/authordm:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -245,15 +245,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: 작가 관리
+  name: authordm
   labels:
-    app: 작가 관리
+    app: authordm
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: 작가 관리
+    app: authordm
 
 
 ---
@@ -262,15 +262,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ai service
+  name: aiservice
   labels:
-    app: ai service
+    app: aiservice
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: ai service
+    app: aiservice
 
 
 ---
@@ -279,15 +279,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: 포인트 관리
+  name: pointdm
   labels:
-    app: 포인트 관리
+    app: pointdm
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: 포인트 관리
+    app: pointdm
 
 
 ---
@@ -296,15 +296,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: 구독자관리
+  name: userdm
   labels:
-    app: 구독자관리
+    app: userdm
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: 구독자관리
+    app: userdm
 
 
 ---
@@ -313,15 +313,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: 서재플랫폼
+  name: admindm
   labels:
-    app: 서재플랫폼
+    app: admindm
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: 서재플랫폼
+    app: admindm
 
 
 ---
@@ -330,13 +330,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: 집필관리
+  name: authordm
   labels:
-    app: 집필관리
+    app: authordm
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: 집필관리
+    app: authordm
 

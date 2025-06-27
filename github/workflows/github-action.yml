@@ -29,70 +29,70 @@ jobs:
       
       - name: Build Maven Projects
         run: |
-          mvn clean package -f ./작가 관리/pom.xml
-          mvn clean package -f ./ai service/pom.xml
-          mvn clean package -f ./포인트 관리/pom.xml
-          mvn clean package -f ./구독자관리/pom.xml
-          mvn clean package -f ./서재플랫폼/pom.xml
-          mvn clean package -f ./집필관리/pom.xml
+          mvn clean package -f ./authordm/pom.xml
+          mvn clean package -f ./aiservice/pom.xml
+          mvn clean package -f ./pointdm/pom.xml
+          mvn clean package -f ./userdm/pom.xml
+          mvn clean package -f ./admindm/pom.xml
+          mvn clean package -f ./authordm/pom.xml
 
-      - name: Docker Build and push for 작가관리
+      - name: Docker Build and push for Authordm
         uses: docker/build-push-action@v4
         with:
-          context: ./작가 관리
+          context: ./authordm
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/작가-관리:latest
-            ghcr.io/${{ github.repository }}/작가-관리:${{ github.ref_name }}
+            ghcr.io/${{ github.repository }}/authordm:latest
+            ghcr.io/${{ github.repository }}/authordm:${{ github.ref_name }}
             
-      - name: Docker Build and push for AiService
+      - name: Docker Build and push for Aiservice
         uses: docker/build-push-action@v4
         with:
-          context: ./ai service
+          context: ./aiservice
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/ai-service:latest
-            ghcr.io/${{ github.repository }}/ai-service:${{ github.ref_name }}
+            ghcr.io/${{ github.repository }}/aiservice:latest
+            ghcr.io/${{ github.repository }}/aiservice:${{ github.ref_name }}
             
-      - name: Docker Build and push for 포인트관리
+      - name: Docker Build and push for Pointdm
         uses: docker/build-push-action@v4
         with:
-          context: ./포인트 관리
+          context: ./pointdm
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/포인트-관리:latest
-            ghcr.io/${{ github.repository }}/포인트-관리:${{ github.ref_name }}
+            ghcr.io/${{ github.repository }}/pointdm:latest
+            ghcr.io/${{ github.repository }}/pointdm:${{ github.ref_name }}
             
-      - name: Docker Build and push for 구독자관리
+      - name: Docker Build and push for Userdm
         uses: docker/build-push-action@v4
         with:
-          context: ./구독자관리
+          context: ./userdm
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/구독자관리:latest
-            ghcr.io/${{ github.repository }}/구독자관리:${{ github.ref_name }}
+            ghcr.io/${{ github.repository }}/userdm:latest
+            ghcr.io/${{ github.repository }}/userdm:${{ github.ref_name }}
             
-      - name: Docker Build and push for 서재플랫폼
+      - name: Docker Build and push for Admindm
         uses: docker/build-push-action@v4
         with:
-          context: ./서재플랫폼
+          context: ./admindm
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/서재플랫폼:latest
-            ghcr.io/${{ github.repository }}/서재플랫폼:${{ github.ref_name }}
+            ghcr.io/${{ github.repository }}/admindm:latest
+            ghcr.io/${{ github.repository }}/admindm:${{ github.ref_name }}
             
-      - name: Docker Build and push for 집필관리
+      - name: Docker Build and push for Authordm
         uses: docker/build-push-action@v4
         with:
-          context: ./집필관리
+          context: ./authordm
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/집필관리:latest
-            ghcr.io/${{ github.repository }}/집필관리:${{ github.ref_name }}
+            ghcr.io/${{ github.repository }}/authordm:latest
+            ghcr.io/${{ github.repository }}/authordm:${{ github.ref_name }}
             

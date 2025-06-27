@@ -20,12 +20,12 @@ cd /bin
 ## Run the backend micro-services
 See the README.md files inside the each microservices directory:
 
-- 작가 관리
-- ai service
-- 포인트 관리
-- 구독자관리
-- 서재플랫폼
-- 집필관리
+- authordm
+- aiservice
+- pointdm
+- userdm
+- admindm
+- authordm
 
 
 ## Run API Gateway (Spring Gateway)
@@ -35,29 +35,29 @@ mvn spring-boot:run
 ```
 
 ## Test by API
-- 작가 관리
+- authordm
 ```
  http :8088/authors authorId="authorId"authorName="authorName"craeteDate="craeteDate"authorInfo="authorInfo"authorPortfolio="authorPortfolio"
 ```
-- ai service
+- aiservice
 ```
  http :8088/publishings id="id"title="title"summaryContent="summaryContent"summary="summary"category="category"imagepath="imagepath"contents="contents"
 ```
-- 포인트 관리
+- pointdm
 ```
  http :8088/points userId="userId"point="point"userType="userType"pointsDeadline="PointsDeadline"
 ```
-- 구독자관리
+- userdm
 ```
  http :8088/users id="id"userid="userid"userType="userType"subscriptionStatus="subscriptionStatus"
 ```
-- 서재플랫폼
+- admindm
 ```
- http :8088/플랫폼관리 id="id"userId="userId"authorId="authorId"bookId="bookId"categoryId="categoryId"isSubscribed="isSubscribed"isPublished="isPublished"
+ http :8088/admins id="id"userId="userId"authorId="authorId"bookId="bookId"categoryId="categoryId"isSubscribed="isSubscribed"isPublished="isPublished"
 ```
-- 집필관리
+- authordm
 ```
- http :8088/원고 id="id"title="title"date="Date"authorName="author Name"contents="contents"status="status"type="type"
+ http :8088/authors id="id"title="title"date="Date"authorName="author Name"contents="contents"status="status"type="type"
 ```
 
 

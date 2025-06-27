@@ -23,7 +23,7 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
 
-  작가 관리:
+  authordm:
     depends_on: 
       - kafka
     image: adoptopenjdk/maven-openjdk11:latest
@@ -34,10 +34,10 @@ services:
       - 8082:8082
     working_dir: /usr/src
     volumes:
-      - ./작가 관리:/usr/src
+      - ./authordm:/usr/src
       - ./maven-repo:/root/.m2
       
-  ai service:
+  aiservice:
     depends_on: 
       - kafka
     image: adoptopenjdk/maven-openjdk11:latest
@@ -48,10 +48,10 @@ services:
       - 8083:8083
     working_dir: /usr/src
     volumes:
-      - ./ai service:/usr/src
+      - ./aiservice:/usr/src
       - ./maven-repo:/root/.m2
       
-  포인트 관리:
+  pointdm:
     depends_on: 
       - kafka
     image: adoptopenjdk/maven-openjdk11:latest
@@ -62,10 +62,10 @@ services:
       - 8084:8084
     working_dir: /usr/src
     volumes:
-      - ./포인트 관리:/usr/src
+      - ./pointdm:/usr/src
       - ./maven-repo:/root/.m2
       
-  구독자관리:
+  userdm:
     depends_on: 
       - kafka
     image: adoptopenjdk/maven-openjdk11:latest
@@ -76,10 +76,10 @@ services:
       - 8085:8085
     working_dir: /usr/src
     volumes:
-      - ./구독자관리:/usr/src
+      - ./userdm:/usr/src
       - ./maven-repo:/root/.m2
       
-  서재플랫폼:
+  admindm:
     depends_on: 
       - kafka
     image: adoptopenjdk/maven-openjdk11:latest
@@ -90,10 +90,10 @@ services:
       - 8086:8086
     working_dir: /usr/src
     volumes:
-      - ./서재플랫폼:/usr/src
+      - ./admindm:/usr/src
       - ./maven-repo:/root/.m2
       
-  집필관리:
+  authordm:
     depends_on: 
       - kafka
     image: adoptopenjdk/maven-openjdk11:latest
@@ -104,6 +104,6 @@ services:
       - 8087:8087
     working_dir: /usr/src
     volumes:
-      - ./집필관리:/usr/src
+      - ./authordm:/usr/src
       - ./maven-repo:/root/.m2
       

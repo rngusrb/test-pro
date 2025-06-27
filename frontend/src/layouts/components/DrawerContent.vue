@@ -7,10 +7,10 @@ import {
 
 <template>
     <ul>
-        <VerticalNavSectionTitle :item="{ heading: '작가관리' }" />
+        <VerticalNavSectionTitle :item="{ heading: 'Authordm' }" />
         <VerticalNavLink
             :item="{
-                title: '작가',
+                title: 'Author',
                 to: '/authors',
             }"
         />
@@ -20,17 +20,17 @@ import {
                 to: '/authorBookLists',
             }"
         />
-        <VerticalNavSectionTitle :item="{ heading: 'AiService' }" />
+        <VerticalNavSectionTitle :item="{ heading: 'Aiservice' }" />
         <VerticalNavLink
             :item="{
-                title: '출간 준비',
+                title: 'Publishing',
                 to: '/publishings',
             }"
         />
-        <VerticalNavSectionTitle :item="{ heading: '포인트관리' }" />
+        <VerticalNavSectionTitle :item="{ heading: 'pointdm' }" />
         <VerticalNavLink
             :item="{
-                title: '포인트',
+                title: 'Point',
                 to: '/points',
             }"
         />
@@ -40,10 +40,10 @@ import {
                 to: '/userSubscribedBookLists',
             }"
         />
-        <VerticalNavSectionTitle :item="{ heading: '구독자 관리' }" />
+        <VerticalNavSectionTitle :item="{ heading: 'userdm' }" />
         <VerticalNavLink
             :item="{
-                title: '구독자',
+                title: 'User',
                 to: '/users',
             }"
         />
@@ -59,11 +59,11 @@ import {
                 to: '/userReviews',
             }"
         />
-        <VerticalNavSectionTitle :item="{ heading: '서재플랫폼' }" />
+        <VerticalNavSectionTitle :item="{ heading: 'admindm' }" />
         <VerticalNavLink
             :item="{
-                title: '플랫폼관리',
-                to: '/플랫폼관리',
+                title: 'Admin',
+                to: '/admins',
             }"
         />
         <VerticalNavLink
@@ -78,11 +78,11 @@ import {
                 to: '/userSubscribedBookLists',
             }"
         />
-        <VerticalNavSectionTitle :item="{ heading: '집필관리' }" />
+        <VerticalNavSectionTitle :item="{ heading: 'authordm' }" />
         <VerticalNavLink
             :item="{
-                title: '원고',
-                to: '/원고',
+                title: 'author',
+                to: '/authors',
             }"
         />
         <VerticalNavLink

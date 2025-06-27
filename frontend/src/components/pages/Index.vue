@@ -33,7 +33,7 @@ export default {
   data: () => ({
     cards: [
       {
-          text: "작가",
+          text: "Author",
           link: "/authors",
       },
       {
@@ -41,11 +41,11 @@ export default {
           link: "/authorBookLists",
       },
       {
-          text: "출간 준비",
+          text: "Publishing",
           link: "/publishings",
       },
       {
-          text: "포인트",
+          text: "Point",
           link: "/points",
       },
       {
@@ -53,7 +53,7 @@ export default {
           link: "/userSubscribedBookLists",
       },
       {
-          text: "구독자",
+          text: "User",
           link: "/users",
       },
       {
@@ -65,8 +65,8 @@ export default {
           link: "/userReviews",
       },
       {
-          text: "플랫폼관리",
-          link: "/플랫폼관리",
+          text: "Admin",
+          link: "/admins",
       },
       {
           text: "작가 출간 도서 리스트",
@@ -77,8 +77,8 @@ export default {
           link: "/userSubscribedBookLists",
       },
       {
-          text: "원고",
-          link: "/원고",
+          text: "author",
+          link: "/authors",
       },
       {
           text: "원고 목록 ",

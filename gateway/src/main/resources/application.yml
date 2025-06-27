@@ -9,30 +9,30 @@ spring:
     gateway:
 #<<< API Gateway / Routes
       routes:
-        - id: 작가 관리
+        - id: authordm
           uri: http://localhost:8082
           predicates:
             - Path=/authors/**, /authorBookLists/**
-        - id: ai service
+        - id: aiservice
           uri: http://localhost:8083
           predicates:
             - Path=/publishings/**, 
-        - id: 포인트 관리
+        - id: pointdm
           uri: http://localhost:8084
           predicates:
             - Path=/points/**, /userSubscribedBookLists/**
-        - id: 구독자관리
+        - id: userdm
           uri: http://localhost:8085
           predicates:
             - Path=/users/**, /userWishlists/**, /userReviews/**
-        - id: 서재플랫폼
+        - id: admindm
           uri: http://localhost:8086
           predicates:
-            - Path=/플랫폼관리/**, /authorPublishBooklists/**, /userSubscribedBookLists/**
-        - id: 집필관리
+            - Path=/admins/**, /authorPublishBooklists/**, /userSubscribedBookLists/**
+        - id: authordm
           uri: http://localhost:8087
           predicates:
-            - Path=/원고/**, /manuscriptLists/**
+            - Path=/authors/**, /manuscriptLists/**
         - id: frontend
           uri: http://localhost:8080
           predicates:
@@ -57,30 +57,30 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: 작가 관리
-          uri: http://작가관리:8080
+        - id: authordm
+          uri: http://authordm:8080
           predicates:
             - Path=/authors/**, 
-        - id: ai service
-          uri: http://aiService:8080
+        - id: aiservice
+          uri: http://aiservice:8080
           predicates:
             - Path=/publishings/**, 
-        - id: 포인트 관리
-          uri: http://포인트관리:8080
+        - id: pointdm
+          uri: http://pointdm:8080
           predicates:
             - Path=/points/**, 
-        - id: 구독자관리
-          uri: http://구독자관리:8080
+        - id: userdm
+          uri: http://userdm:8080
           predicates:
             - Path=/users/**, 
-        - id: 서재플랫폼
-          uri: http://서재플랫폼:8080
+        - id: admindm
+          uri: http://admindm:8080
           predicates:
-            - Path=/플랫폼관리/**, 
-        - id: 집필관리
-          uri: http://집필관리:8080
+            - Path=/admins/**, 
+        - id: authordm
+          uri: http://authordm:8080
           predicates:
-            - Path=/원고/**, 
+            - Path=/authors/**, 
         - id: frontend
           uri: http://frontend:8080
           predicates:

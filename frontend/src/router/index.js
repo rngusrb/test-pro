@@ -40,8 +40,8 @@ const router = createRouter({
       component: () => import('../components/UserReviewView.vue'),
     },
     {
-      path: '/플랫폼관리',
-      component: () => import('../components/ui/플랫폼관리Grid.vue'),
+      path: '/admins',
+      component: () => import('../components/ui/AdminGrid.vue'),
     },
     {
       path: '/authorPublishBooklists',
@@ -52,8 +52,8 @@ const router = createRouter({
       component: () => import('../components/UserSubscribedBookListView.vue'),
     },
     {
-      path: '/원고',
-      component: () => import('../components/ui/원고Grid.vue'),
+      path: '/authors',
+      component: () => import('../components/ui/AuthorGrid.vue'),
     },
     {
       path: '/manuscriptLists',
